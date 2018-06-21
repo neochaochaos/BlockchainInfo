@@ -1,0 +1,15 @@
+input,
+label {
+    margin: 10px;
+}
+label {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    word-break: break-all;
+}
