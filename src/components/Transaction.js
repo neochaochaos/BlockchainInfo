@@ -63,6 +63,7 @@ class Transaction extends Component {
                     pageNumbers[0] !== currentPage ? (
                         <PaginationItem>
                             <PaginationLink
+                                id="prev"
                                 previous
                                 onClick={this.handlePrevClick}
                             />
@@ -72,6 +73,7 @@ class Transaction extends Component {
                     {currentPage !== pageNumbers[pageNumbers.length - 1] ? (
                         <PaginationItem>
                             <PaginationLink
+                                id="next"
                                 next
                                 onClick={this.handleNextClick}
                             />

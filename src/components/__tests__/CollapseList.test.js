@@ -13,7 +13,7 @@ describe("CollapseList", () => {
     beforeEach(() => {
         tx = mockBlockchainInfo.tx[0];
         generateList = jest.fn();
-        wrapperShallow = shallow(<CollapseList tx={tx} />);
+        wrapperShallow = shallow(<CollapseList index={1} tx={tx} />);
         wrapperMount = mount(<CollapseList index={1} tx={tx} />);
     });
     it("should contain exactly one transaction", () => {
