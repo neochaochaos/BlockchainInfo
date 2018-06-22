@@ -40,8 +40,17 @@ describe("CollapseListItem", () => {
 
     it("should change collapse state from true to false after toggling", () => {
         wrapper.setState({ collapse: true });
-
         wrapper.instance().toggle(mockToggle);
         expect(wrapper.state("collapse")).toBe(false);
+    });
+
+    it("should contain correct hash text", () => {
+        wrapper = mount(
+            <CollapseListItem itemKey={"tx"} itemValue={data[0].hash} />
+        );
+        expect(wrapper.find(CollapseListItem).text()).toBe(
+            `tx: ${data[0].hash}`
+        );
+        wrapper.unmount();
     });
 });
