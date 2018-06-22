@@ -43,6 +43,7 @@ class SearchForm extends Component {
                             pattern="[0-9a-f]+"
                             type="text"
                             name="hash"
+                            size="75"
                             placeholder="Enter Hash Here"
                             value={this.state.hash}
                             onChange={this.handleChange}
