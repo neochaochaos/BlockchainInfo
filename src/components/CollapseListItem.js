@@ -16,20 +16,18 @@ class CollapseListItem extends Component {
     render() {
         return (
             <ListGroupItem>
-                <span>
-                    <button className="btn btn-info" onClick={this.toggle}>
-                        {this.props.itemKey + ": "}
-                    </button>
-                    <Collapse isOpen={this.state.collapse}>
-                        {this.props.itemValue instanceof Array ? (
-                            <ListGroup>
-                                {this.props.itemValue.map(value => value)}
-                            </ListGroup>
-                        ) : (
-                            this.props.itemValue
-                        )}
-                    </Collapse>
-                </span>
+                <button className="btn btn-info" onClick={this.toggle}>
+                    {this.props.itemKey + ": "}
+                </button>
+                <Collapse isOpen={this.state.collapse}>
+                    {this.props.itemValue instanceof Array ? (
+                        <ListGroup>
+                            {this.props.itemValue.map(value => value)}
+                        </ListGroup>
+                    ) : (
+                        this.props.itemValue
+                    )}
+                </Collapse>
             </ListGroupItem>
         );
     }
