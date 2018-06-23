@@ -20,8 +20,13 @@ class SearchForm extends Component {
             const requestUrl = `${baseUrl}${this.state.hash}.json`;
             const response = await fetch(requestUrl);
             json = await response.json();
+            if (json["error"]) {
+                alert(json["error"]);
+                return null;
+            }
         } catch (error) {
-            alert(error);
+            this.setState({ hash: "" });
+            return null;
         }
 
         this.setState({ hash: "" });
@@ -44,6 +49,7 @@ class SearchForm extends Component {
                             type="text"
                             name="hash"
                             size="75"
+                            minLength="64"
                             placeholder="Enter Hash Here"
                             value={this.state.hash}
                             onChange={this.handleChange}
